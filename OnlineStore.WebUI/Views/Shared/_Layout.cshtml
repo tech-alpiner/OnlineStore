@@ -9,6 +9,16 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    @RenderBody()    
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <a class="navbar-brand" href="#">OStore</a>
+    </div>
+    <div class="row panel">
+        <div id="categories" class="col-lg-3">
+            Categories
+        </div>
+        <div class="col-lg-7">
+            @RenderBody()
+        </div>
+    </div>  
 </body>
 </html>
