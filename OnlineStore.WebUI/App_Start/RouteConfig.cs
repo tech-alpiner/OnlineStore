@@ -27,23 +27,21 @@ namespace OnlineStore.WebUI
                 {
                     controller = "Product",
                     action = "List",
-                    category = (string)null
+                    category =
+                        (string)null
                 },
-
-                new { page = @"\d+" }
-            );
+                new { page = @"\d+" });
 
             routes.MapRoute(null,
                 "{category}",
                 new { controller = "Product", action = "List", page = 1 }
-            );
+                );
 
             routes.MapRoute(null,
                 "{category}/Page{page}",
                 new { controller = "Product", action = "List" },
                 new { page = @"\d+" }
-            );
-
+                );
             routes.MapRoute(null, "{controller}/{action}");
         }
     }
