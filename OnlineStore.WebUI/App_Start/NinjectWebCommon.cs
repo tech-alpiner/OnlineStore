@@ -69,6 +69,8 @@ namespace OnlineStore.WebUI.App_Start
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>();
 
+            kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
+
             //Mock<IProductRepository> mock = new Mock<IProductRepository>();
             //mock.Setup(m => m.Products).Returns(new List<Product>
             //{

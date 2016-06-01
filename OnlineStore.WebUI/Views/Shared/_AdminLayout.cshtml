@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - OStore</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body style="margin-top: 0;">
+    <div>
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        @{
+            var userName = HttpContext.Current.User.Identity.Name;
+            if (userName != "")
+            {
+                <h3>
+                    @Html.ActionLink("View OStore", "List", "Product")
+                <span class="btn-info btn pull-right">
+                    @Html.ActionLink(HttpContext.Current.User.Identity.Name + " - Logout", "Logout", "Accounts")
+                </span>
+            </h3>
+            }
+        }
+
+        @RenderBody()
+    </div>
+</body>
+</html>
